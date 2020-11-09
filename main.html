@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <base target="_top">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+  <body>
+  <span class="border">
+  <span class="border-left">
+  <div class="jumbotron" >
+   <h1 class="display-4"> Welcome, <?= firstname ?> </h1>
+        <p class="lead">Below is a summary of how much you've worked </p>
+   <hr class="my-4">
+   <p>
+   So far you've worked a total of <b> <?= hours ?> </b> hours. 
+   <br><br>
+   At your current wage of <b>$<?= wage ?></b> per hour, your total earnings so far are roughly <b>$<?= grosspay ?></b>. 
+   <br> <br>
+   This year, at a full time job, you can expect to make <b>$<?= fulltime ?></b>
+   <br> 
+   <?= wagemessage ?>
+   </p>
+   </div>
+   <br><br>
+   <div class="cointainer">
+     <div class="row">
+       <div class="col-xl">
+         <div class="row">
+         <div class="card">
+           <div class="card-body">
+            <h5 class="card-title">This Period</h5>
+            <p class="card-text">This month you have worked <?= tpp ?> hours, thus you are owed roughly $<?= ppmoney ?>.</p>
+          </div>
+         </div>
+         </div>
+         <br> <br> <br>
+         <div class="row">
+         <div class="card">
+         <img  src=<?= map ?> >Loading…</img>
+           <div class="card-body">
+           <h5 class="card-title">How far away are you?</h5>
+            <p class="card-text">If you left right now, it would take you <b>19 minutes</b> to arrive at <?= work ?> </p>
+            </div>
+         </div>
+         </div>
+         <br> <br> <br>
+         <div class="row">
+         <div class="card">
+           <div class="card-body">
+            <h5 class="card-title">Email Your Supervisor</h5>
+            <input type="text" id="superemail" size=45>
+            <button class="btn btn-info" id="send">Send Email</button>
+          </div>
+         </div>
+         </div>
+       </div>
+       
+       <script>
+       document.getElementById("send").addEventListener("click", snd)
+       function snd() 
+       {
+        var toemail = document.getElementById("superemail").value
+        google.script.run.sendmessage(toemail)
+       }
+       </script>
+       
+        <div class="col-xl">
+         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfWQ1S-vw5jIk7D5BGPXOVcwLT88IJb_anx3Sdy15A1cIRURA/viewform?embedded=true" width="640" height="872" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+     </div>
+   </div>
+   </span>
+   </span>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
